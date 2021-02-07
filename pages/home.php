@@ -3,8 +3,10 @@
 
     <table class="table">
         <tbody>
-            <td><img src="images/php.png" class="image-responsive" width="400px"></td>
-            <td><img src="images/bootstrap.png" class="image-responsive" width="400px"></td>
+            <tr>
+                <td><img src="images/php.png" class="image-responsive" width="400px"></td>
+                <td><img src="images/bootstrap.png" class="image-responsive" width="400px"></td>
+            </tr>
         </tbody>
     </table>
 
