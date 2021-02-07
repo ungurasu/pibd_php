@@ -1,4 +1,4 @@
-<div class="py-5"">
+<div class="py-5">
     <h1>Proiect PIBD</h1>
 
     <table class="table">
