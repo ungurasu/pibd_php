@@ -55,7 +55,10 @@
     <?php } ?>
 
     <?php if($connection_successful) { ?>
-        <div class="alert alert-success">Te-ai conectat cu succes la baza de date. Vei fi redirectionat...</div>
+        <div class="alert alert-success">
+            <h4 class="alert-heading">Te-ai conectat cu succes la baza de date.</h4>
+            <p>Vei fi redirectionat in 5 secunde la homescreen.</p>
+        </div>
         <meta http-equiv="refresh" content="5; url=/" />
     <?php } else { ?>
         <form action="/?page=login" method="post">

@@ -4,7 +4,6 @@
 
 
     //TODO: verificam daca post-ul este gol
-    //TODO: redirectionare
     $columns_querry = $bd->query(sprintf("SHOW COLUMNS FROM %s;",$_GET['table']));
 
     $sql_command = sprintf("UPDATE %s SET ",$_GET['table']);
@@ -21,8 +20,10 @@
     //var_dump($_POST);
     if ($bd->query($sql_command) === TRUE) { ?>
         <div class="alert alert-success" role="alert">
-            Am updatat cu succes!
+            <h4 class="alert-heading">Am updatat cu succes!</h4>
+            <p>Vei fi redirectionat in 5 secunde la homescreen.</p>
         </div>
+        <meta http-equiv="refresh" content="5; url=/" />
         <?php
     }
     else { ?>

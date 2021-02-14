@@ -5,8 +5,6 @@
 
     <?php
     // TODO: verificam daca post-ul este gol
-    // TODO: redirectionare
-    // TODO: curatenie
     $columns_querry = $bd->query(sprintf("SHOW COLUMNS FROM %s;",$_GET['table']));
 
     $sql_command = sprintf("INSERT INTO %s (",$_GET['table']);
@@ -27,8 +25,10 @@
 
     if ($bd->query($sql_command) === TRUE) { ?>
         <div class="alert alert-success" role="alert">
-            Am inserat cu succes!
+            <h4 class="alert-heading">Am inserat cu succes!</h4>
+            <p>Vei fi redirectionat in 5 secunde la homescreen.</p>
         </div>
+        <meta http-equiv="refresh" content="5; url=/" />
     <?php } else { ?>
         <div class="alert alert-danger" role="alert">
             <?php printf("%s", $bd->error)?>
