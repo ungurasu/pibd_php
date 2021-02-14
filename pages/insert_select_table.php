@@ -1,4 +1,4 @@
-<div class="py-5">
+<div>
     <?php
     $bd = DBConnection::getInstance()::getDB();
     ?>
@@ -40,6 +40,6 @@
             </div>
         </div>
     <?php } else {
-        printf("Vom insera in %s",$_GET['table']);
+        echo "Vom insera in " . $_GET['table'];
     }?>
 </div>

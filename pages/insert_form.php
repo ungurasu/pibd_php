@@ -1,4 +1,4 @@
-<div class="py-5">
+<div>
     <?php
     $bd = DBConnection::getInstance()::getDB();
     ?>

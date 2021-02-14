@@ -1,4 +1,4 @@
-<div class="py-5">
+<div>
     <?php
         $bd = DBConnection::getInstance()::getDB();
     ?>
@@ -112,7 +112,7 @@
         <h1>Tabelul '<?= $requested_table ?>'</h1>
         <p class="lead">Se afiseaza <?= $result->num_rows ?> randuri.</p>
         <div class="row justify-content-center col-auto">
-            <table class="table table-striped table-sm">
+            <table class="table table-striped table-sm table-responsive">
                 <thead>
                     <tr>
                         <?php foreach ($fields as $field) { ?>

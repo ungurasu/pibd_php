@@ -68,23 +68,38 @@
             </div>
         </nav>
 
-        <div class="container" id="main-container">
+        <div class="container py-5" id="main-container">
+            <?php
+                if(!empty($_SESSION['message'])) {
+                    $message = $_SESSION['message'];
+                    $_SESSION['message'] = null;
 
-        <?php
-            try {
-                require "pages/{$page}.php";
-            } catch (Exception $e) {
-                ?>
-                    <div class="alert alert-danger" role="alert">
-                        <h4 class="alert-heading">Am intampinat o eroare!</h4>
-                        <p>In executia acestei pagini, am intampinat o eroare. Puteti vedea mesajul mai jos.</p>
-                        <hr>
-                        <p class="small">In fisierul <?= $e->getFile() ?>, la linia <?= $e->getLine() ?>:</p>
-                        <p class="mb-0"><?= nl2br($e->getMessage()) ?></p>
+                    ?>
+
+                    <div class="alert alert-<?= $message['message_color'] ?>" role="alert">
+                        <h4 class="alert-heading"><?= $message['heading'] ?></h4>
+                        <p><?= nl2br($message['message']) ?></p>
                     </div>
-                <?php
-            }
-        ?>
+
+                    <?php
+                }
+            ?>
+
+            <?php
+                try {
+                    require "pages/{$page}.php";
+                } catch (Exception $e) {
+                    ?>
+                        <div class="alert alert-danger" role="alert">
+                            <h4 class="alert-heading">Am intampinat o eroare!</h4>
+                            <p>In executia acestei pagini, am intampinat o eroare. Puteti vedea mesajul mai jos.</p>
+                            <hr>
+                            <p class="small">In fisierul <?= $e->getFile() ?>, la linia <?= $e->getLine() ?>:</p>
+                            <p class="mb-0"><?= nl2br($e->getMessage()) ?></p>
+                        </div>
+                    <?php
+                }
+            ?>
         </div>
     </body>
 </html>

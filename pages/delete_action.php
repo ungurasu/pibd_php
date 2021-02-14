@@ -1,4 +1,4 @@
-<div class="py-5">
+<div>
     <?php
     $bd = DBConnection::getInstance()::getDB();
     $sql_command = sprintf("DELETE FROM %s WHERE %s = %s;", $_GET['table'], $_GET['pk_name'],$_GET['pk_value']);
