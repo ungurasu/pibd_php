@@ -7,19 +7,8 @@
     // TODO: verificam daca post-ul este gol
     // TODO: redirectionare
     // TODO: curatenie
-    printf("<div> Table: %s </div>",$_GET['table']);
     $columns_querry = $bd->query(sprintf("SHOW COLUMNS FROM %s;",$_GET['table']));
-    foreach($columns_querry as $column) {
-        if ($column['Extra'] != 'auto_increment') {?>
-        <div>
-            <?php printf("%s: %s",$column['Field'],$_POST[$column['Field']])?>
-        </div>
-    <?php
-        }
-    }
-    ?>
 
-    <?php
     $sql_command = sprintf("INSERT INTO %s (",$_GET['table']);
     foreach($columns_querry as $column) {
         if ($column['Extra'] != 'auto_increment') {

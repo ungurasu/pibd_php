@@ -119,6 +119,7 @@
                             <th><?= htmlentities($field->name) ?></th>
                         <?php } ?>
                         <th>Delete</th>
+                        <th>Update</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -128,6 +129,7 @@
                                 <td><?= htmlentities($row[$field->name]) ?></td>
                             <?php } ?>
                             <td><a class="btn btn-danger" href="?page=delete_action<?php printf("&table=%s&pk_name=%s&pk_value=%s",$_GET['table'],$pk_name,$row[$pk_name])?>">Delete</a></td>
+                            <td><a class="btn btn-primary" href="?page=update_form<?php printf("&table=%s&pk_name=%s&pk_value=%s",$_GET['table'],$pk_name,$row[$pk_name])?>">Update</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>
