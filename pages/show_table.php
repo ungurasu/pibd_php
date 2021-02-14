@@ -46,10 +46,15 @@
 
     $requested_table = $bd->real_escape_string($_GET['table']);
     $columns_query = $bd->query("SHOW COLUMNS FROM $requested_table;");
+    $pk_name = "";
     foreach ($columns_query as $column) {
         $columns[] = $column["Field"];
+        if ($column['Key'] == 'PRI') {
+            $pk_name = $column["Field"];
+        }
+        //var_dump($column);
     }
-    //var_dump($columns);
+    //var_dump($pk_name);
 
     $referenced_tables = [];
     $inner_joins = [];
@@ -113,6 +118,7 @@
                         <?php foreach ($fields as $field) { ?>
                             <th><?= htmlentities($field->name) ?></th>
                         <?php } ?>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -121,6 +127,7 @@
                             <?php foreach ($fields as $field) { ?>
                                 <td><?= htmlentities($row[$field->name]) ?></td>
                             <?php } ?>
+                            <td><a class="btn btn-danger" href="?page=delete_action<?php printf("&table=%s&pk_name=%s&pk_value=%s",$_GET['table'],$pk_name,$row[$pk_name])?>">Delete</a></td>
                         </tr>
                     <?php } ?>
                 </tbody>
