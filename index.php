@@ -27,8 +27,6 @@
             else {
                 $page = 'home';
                 if (isset($_GET['page'])) {
-                    // TODO: validam daca calea specificata de utilizator ramane in folderul "pages"
-
                     if (file_exists("pages/{$_GET['page']}.php"))
                         $page = $_GET['page'];
                 }

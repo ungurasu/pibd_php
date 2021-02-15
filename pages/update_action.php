@@ -18,19 +18,20 @@
     //printf("%s",$sql_command);
     //var_dump($_GET);
     //var_dump($_POST);
-    if ($bd->query($sql_command) === TRUE) { ?>
-        <div class="alert alert-success" role="alert">
-            <h4 class="alert-heading">Am updatat cu succes!</h4>
-            <p>Vei fi redirectionat in 5 secunde la homescreen.</p>
-        </div>
-        <meta http-equiv="refresh" content="5; url=/" />
-        <?php
+    if ($bd->query($sql_command) === TRUE) {
+        $_SESSION['message'] = [
+            'heading' => 'Succes!',
+            'message' => 'Update efectuat.',
+            'message_color' => 'success'
+        ];
+    } else {
+        $_SESSION['message'] = [
+            'heading' => 'Eroare la update!',
+            'message' => 'Nu am putut realiza update-ul: ' . $bd->error . '\nQuery: ' . $sql_command,
+            'message_color' => 'danger'
+        ];
     }
-    else { ?>
-        <div class="alert alert-danger" role="alert">
-            <?php printf("%s", $bd->error)?>
-        </div>
-        <?php
-    }
+
     ?>
+    <meta http-equiv="refresh" content="0; url=/" />
 </div>

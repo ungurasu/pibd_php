@@ -5,19 +5,20 @@
     //printf("%s", $sql_command);
 
     //TODO: verificam daca get-ul e gol
-    if ($bd->query($sql_command) === TRUE) { ?>
-        <div class="alert alert-success" role="alert">
-            <h4 class="alert-heading">Am sters cu succes!</h4>
-            <p>Vei fi redirectionat in 5 secunde la homescreen.</p>
-        </div>
-        <meta http-equiv="refresh" content="5; url=/" />
-    <?php
+    if ($bd->query($sql_command) === TRUE) {
+        $_SESSION['message'] = [
+            'heading' => 'Succes!',
+            'message' => 'Delete efectuat',
+            'message_color' => 'success'
+        ];
+    } else {
+        $_SESSION['message'] = [
+            'heading' => 'Eroare la stergerea datelor!',
+            'message' => 'Nu am putut sterge din baza de date: ' . $bd->error . '\nQuery: ' . $sql_command,
+            'message_color' => 'danger'
+        ];
     }
-    else { ?>
-        <div class="alert alert-danger" role="alert">
-            <?php printf("%s", $bd->error)?>
-        </div>
-    <?php
-    }
+
     ?>
+    <meta http-equiv="refresh" content="0; url=/" />
 </div>

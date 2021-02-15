@@ -23,8 +23,8 @@
 
     if ($bd->query($sql_command) === TRUE) {
         $_SESSION['message'] = [
-            'heading' => 'Am inserat cu succes!',
-            'message' => 'Vei fi redirectionat in 5 secunde la homescreen.',
+            'heading' => 'Succes!',
+            'message' => 'Insert efectuat',
             'message_color' => 'success'
         ];
     } else {
