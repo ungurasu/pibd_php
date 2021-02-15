@@ -2,7 +2,7 @@
 *Ungurasu Ioan-Andrei 435E UPB ETTI 2021*
 
 ### Cuprins
-[DBConnection.php](#DBConnection.php)
+[DBConnection.php](#dbconnection.php)
 
 ## DBConnection.php
 Acest fisier contine clasa *DBConnection*. Aceasta clasa este responsabila pentru realizarea interfetei intre utilizator si baza de date.
