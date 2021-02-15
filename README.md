@@ -8,9 +8,12 @@
     * [logout.php](#logoutphp)
     * [home.php](#homephp)
     * [show-table.php](#show-tablephp)
-    * [deletea-ction.php](#deletea-ctionphp)
+    * [delete-action.php](#delete-actionphp)
     * [update-form.php](#update-formphp)
     * [update-action.php](#update-actionphp)
+    * [insert-select-table.php](#insert-select-tablephp)
+    * [insert-form.php](#insert-formphp)
+    * [insert-action.php](#insert-actionphp)
 
 ## DBConnection.php
 Acest fisier contine clasa *DBConnection*. Aceasta clasa este responsabila pentru realizarea interfetei intre utilizator si baza de date.
@@ -50,7 +53,7 @@ Cream un tabel cu datele din tabel, si cu un buton de delete si un buton de upda
 
 Baza de date este interogata, astfel incat sa gasim foreign key restraint-urile si sa putem sa aratam datele referentiate din alte tabele adiacente.
 
-## deletea-ction.php
+## delete-action.php
 
 Primim prin GET tabelul din care stergem, campul de PK, si PK-ul dupa care vom sterge.
 
@@ -67,3 +70,21 @@ Primim prin GET tabelul din care updatam, campul de PK, si PK-ul dupa care updat
 Primim prin POST continuturile campurilor.
 
 Interogam baza de date ca sa vedem ce campuri are tabelul si construim o instructiune sql, luand informatiile necesare din GET si din POST.
+
+## insert-select-table.php
+
+Interogam baza de date si generam o lista de tabele disponibile.
+
+## insert-form.php
+
+Interogam baza de date pentru a vedea ce campuri are tabelul selectat anterior. Generam un formular pe care utilizatorul il va completa cu datele row-ului ce va fi inserat.
+
+## insert-action.php
+
+Primim prin GET tabelul in care vom insera.
+
+Interogam baza de date pentru a vedea ce campuri are acesta.
+
+Scoatem datele campurilor din POST.
+
+Construim comanda sql si o executam.
