@@ -1,8 +1,17 @@
 # pibd_php
 *Ungurasu Ioan-Andrei 435E UPB ETTI 2021*
 
-### Cuprins
-[DBConnection.php](#dbconnection.php)
+## Cuprins
+- [pibd_php](#pibd-php)
+    * [DBConnection.php](#dbconnectionphp)
+    * [index.php](#indexphp)
+    * [login.php](#loginphp)
+    * [logout.php](#logoutphp)
+    * [home.php](#homephp)
+    * [show_table.php](#show-tablephp)
+    * [delete_action.php](#delete-actionphp)
+    * [update_form.php](#update-formphp)
+    * [update_action.php](#update-actionphp)
 
 ## DBConnection.php
 Acest fisier contine clasa *DBConnection*. Aceasta clasa este responsabila pentru realizarea interfetei intre utilizator si baza de date.
