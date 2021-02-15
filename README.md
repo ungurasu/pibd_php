@@ -1,17 +1,16 @@
 # pibd_php
 *Ungurasu Ioan-Andrei 435E UPB ETTI 2021*
 
-## Cuprins
 - [pibd_php](#pibd-php)
     * [DBConnection.php](#dbconnectionphp)
     * [index.php](#indexphp)
     * [login.php](#loginphp)
     * [logout.php](#logoutphp)
     * [home.php](#homephp)
-    * [show_table.php](#show-tablephp)
-    * [delete_action.php](#delete-actionphp)
-    * [update_form.php](#update-formphp)
-    * [update_action.php](#update-actionphp)
+    * [show-table.php](#show-tablephp)
+    * [deletea-ction.php](#deletea-ctionphp)
+    * [update-form.php](#update-formphp)
+    * [update-action.php](#update-actionphp)
 
 ## DBConnection.php
 Acest fisier contine clasa *DBConnection*. Aceasta clasa este responsabila pentru realizarea interfetei intre utilizator si baza de date.
@@ -43,7 +42,7 @@ Distrugem sesiunea pentru a deloga utilizatorul. Astfel, se distrug credentialel
 
 Contine cateva propozitii despre proiect.
 
-## show_table.php
+## show-table.php
 
 Interogam baza de date si cream un formular cu o lista cu toate tablele. Il intrebam pe utilizator pe care vrea sa il vizualizeze.
 
@@ -51,14 +50,20 @@ Cream un tabel cu datele din tabel, si cu un buton de delete si un buton de upda
 
 Baza de date este interogata, astfel incat sa gasim foreign key restraint-urile si sa putem sa aratam datele referentiate din alte tabele adiacente.
 
-## delete_action.php
+## deletea-ction.php
 
 Primim prin GET tabelul din care stergem, campul de PK, si PK-ul dupa care vom sterge.
 
-## update_form.php
+## update-form.php
 
 Primim prin GET tabelul din care updatam, campul de PK, si PK-ul dupa care updatam.
 
 Generam un formular pentru fiecare camp (in afara de PK), precompletat cu datele deja existente in row-ul pe care vrem sa il updatam.
 
-## update_action.php
+## update-action.php
+
+Primim prin GET tabelul din care updatam, campul de PK, si PK-ul dupa care updatam.
+
+Primim prin POST continuturile campurilor.
+
+Interogam baza de date ca sa vedem ce campuri are tabelul si construim o instructiune sql, luand informatiile necesare din GET si din POST.
